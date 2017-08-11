@@ -7,12 +7,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.engine('html', engines.mustache);
 app.set("view engine", "html");
 
-app.use(express.static(__dirname + '../dist'));
-app.use('/',express.static(__dirname + '/views'));
-
-app.get("/goodbye",function(req,res){
-	res.send("goodbye");
-});
+app.get("/",function(){
+	res.send("hello");
+})
 
 app.listen(3000,function(){
 	console.log("You are now connected!");

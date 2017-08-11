@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --hot --open"
   },
   "author": "Band Ly",
   "license": "LSC",
@@ -31,6 +31,8 @@
     "body-parser": "^1.17.2",
     "consolidate": "^0.14.5",
     "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.6",
     "mustache": "^2.3.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0-alpha.5",
