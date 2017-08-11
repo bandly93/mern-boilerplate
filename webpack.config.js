@@ -8,6 +8,7 @@ var config = {
     filename: 'index_bundle.js',
     publicPath: '/'
   },
+  
   module: {
     rules: [
       { test: /\.(js)$/, use: 'babel-loader' },
@@ -16,10 +17,17 @@ var config = {
   },
   devServer: {
     historyApiFallback: true,
+    proxy:{
+      '**':{
+        target:'http://localhost:3000',
+        changeOrigin:true,
+        secure:false
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'                                                                                                                                  
+      template: 'views/index.html'                                                                                                                                  
     })
   ]
 };
