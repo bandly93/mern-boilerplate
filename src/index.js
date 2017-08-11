@@ -1,7 +1,22 @@
 import React, { Component} from "react";
 import ReactDOM from "react-dom";
 
+class List extends Component{
+	render(){
+
+		const languages = ['Java','Javascript','Python','Ruby','C++'];
+
+		return(
+			<ul>
+				{
+					languages.map(language => { return <li key = {language}> {language} </li>})
+				}
+			</ul>
+		)
+	}
+}
+
 ReactDOM.render(
-	<p>Hello world!</p>,
+	<List />,
 	document.getElementById('app')
 );
