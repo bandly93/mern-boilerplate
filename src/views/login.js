@@ -1,10 +1,11 @@
 import React, {Component} from "react";
+import LoginBox from "../components/login_box.js"
 
 class Home extends Component{
 	render(){
 		return(
 			<div>
-				<h1>You hit the Login view!</h1>
+				<LoginBox />
 			</div>
 		)
 	}

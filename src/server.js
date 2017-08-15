@@ -28,10 +28,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/goodbye",function(req,res){
-	res.send("goodbye");
-});
-
 app.listen(3000,function(){
 	console.log("You are now connected!");
 });

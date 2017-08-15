@@ -1,10 +1,11 @@
 import React, {Component} from "react";
+import RegisterBox from "../components/register_box";
 
 class Register extends Component{
 	render(){
 		return(
 			<div>
-				<h1>You hit the register view!</h1>
+				<RegisterBox />
 			</div>
 		)
 	}
