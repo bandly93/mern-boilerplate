@@ -2,7 +2,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
-  entry: './src/views/index.js',
+  entry: './src/public/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
@@ -27,7 +27,7 @@ var config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/views/index.html'                                                                                                                                  
+      template: './src/public/index.html'                                                                                                                                  
     })
   ]
 };
