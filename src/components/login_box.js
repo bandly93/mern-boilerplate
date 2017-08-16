@@ -1,4 +1,5 @@
 import React , {Component} from "react";
+import PropTypes from "prop-types";
 
 class LoginBox extends Component {
 	constructor(props){
@@ -12,14 +13,16 @@ class LoginBox extends Component {
 	}
 
 	handleSubmit(event){
-		console.log(this.state.username);
-		console.log(this.state.password);
 		event.preventDefault();
+		let login_info = {
+			username: this.state.username,
+			password: this.state.password
+		}
+		console.log(login_info);
 	}
+
 	handleChange(event){
-		this.setState({
-			[event.target.name] : event.target.value
-		})
+		this.setState({[event.target.name] : event.target.value})
 	}
 
 	render(){
@@ -28,11 +31,11 @@ class LoginBox extends Component {
 				<form onSubmit = {this.handleSubmit}>
 					<label>
 						username:
-						<input type = "text" name = "username" value = {this.state.username} onChange = {this.handleChange}/>
+						<input type = "text" name = "username" value = {this.state.username} autoComplete = 'off' onChange = {this.handleChange}/>
 					</label>
 					<label>
 						password:
-						<input type = "text" name ="password" value = {this.state.password} onChange = {this.handleChange}/>
+						<input type = "password" name = "password" value = {this.state.password} autoComplete = 'off' onChange = {this.handleChange}/>
 					</label>
 					<input type = "submit" name = "Submit" />
 				</form>

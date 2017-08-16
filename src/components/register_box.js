@@ -1,10 +1,9 @@
 import React , {Component} from "react";
+import PropTypes from "prop-types";
 
 class RegisterBox extends Component {
 	constructor(props){
 		super(props);
-
-		//since everything should be empty when you load, we can use the same value for all.
 		this.state = {
 			username : '',
 			password : '',
@@ -14,13 +13,15 @@ class RegisterBox extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
-
 	handleSubmit(event){
-		console.log(this.state.username);
-		console.log(this.state.password);
-		console.log(this.state.confirm_password);
-		console.log(this.state.email);
 		event.preventDefault();
+		let register_info = {
+			username :this.state.username,
+			password : this.state.password,
+			confirm_password : this.state.confirm_password,
+			email : this.state.email
+		}
+		console.log(register_info);
 	}
 
 	handleChange(event){
@@ -33,19 +34,19 @@ class RegisterBox extends Component {
 				<form onSubmit = {this.handleSubmit}>
 					<label>
 						username:
-						<input type = "text" name = "username" value = {this.state.username} onChange = {this.handleChange}/>
+						<input type = "text" name = "username" value = {this.state.username} autoComplete = 'off' onChange = {this.handleChange}/>
 					</label>
 					<label>
 						password:
-						<input type = "text" name = "password" value = {this.state.password} onChange = {this.handleChange} />
+						<input type = "password" name = "password" value = {this.state.password} autoComplete = 'off' onChange = {this.handleChange} />
 					</label>
 					<label> 
 						confirm password:
-						<input type = "text" name = "confirm_password" value = {this.state.confirm_password} onChange = {this.handleChange}/>
+						<input type = "password" name = "confirm_password" value = {this.state.confirm_password} autoComplete = 'off' onChange = {this.handleChange}/>
 					</label>
 					<label>
 						email:
-						<input type = "text" name = "email" value = {this.state.email} onChange = {this.handleChange} />
+						<input type = "email" name = "email" value = {this.state.email} autoComplete = 'off' onChange = {this.handleChange} />
 					</label>
 					<input type = "submit" name = "Submit" />
 				</form>

@@ -9,9 +9,8 @@ var mongoose = require("mongoose");
 var User = require("./models/user");
 var history = require('connect-history-api-fallback');
 
-
-var URI = "mongodb://localhost:27017/tesing_db"
-
+//mongodb
+var URI = "mongodb://localhost:27017/testing_db"
 mongoose.connect(URI, function(err, db) {
   if(!err) {
     console.log("You are now connected to the Mongo database!");
@@ -20,6 +19,7 @@ mongoose.connect(URI, function(err, db) {
   }
 });
 
+//server 
 app.use(bodyParser.urlencoded({extended:true}));
 app.engine('html', engines.mustache);
 app.set("view engine", "html");
@@ -27,7 +27,7 @@ app.use(history());
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/',express.static(__dirname + '/views'));
 
-
+//passport 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
