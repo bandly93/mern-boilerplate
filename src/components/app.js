@@ -8,6 +8,7 @@ const ReactRouter= require("react-router-dom");
 const Router = ReactRouter.BrowserRouter;
 const Switch = ReactRouter.Switch;
 const Route = ReactRouter.Route;
+const IndexRedirect = ReactRouter.indexRedirect;
 
 class App extends Component {
 	render(){
@@ -16,6 +17,7 @@ class App extends Component {
 				<div>
 					<NavBar />
 					<Switch>
+						
 						<Route exact path = '/' component = {Home}/>
 						<Route path = '/login' component = {Login}/>
 						<Route path = '/register' component = {Register}/>

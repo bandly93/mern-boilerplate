@@ -3,7 +3,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack =require("webpack");
 
 var config = {
-  entry: './src/public/index.js',
+  entry: [
+    './src/public/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
@@ -29,8 +31,7 @@ var config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/public/index.html'                                                                                                                                  
-    }),
-    new webpack.HotModuleReplacementPlugin(),
+    })
   ]
 };
 

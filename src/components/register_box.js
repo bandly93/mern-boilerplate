@@ -16,19 +16,16 @@ class RegisterBox extends Component {
 	}
 
 	handleSubmit(event){
-		
+		console.log(this.state.username);
+		console.log(this.state.password);
+		console.log(this.state.confirm_password);
+		console.log(this.state.email);
 		event.preventDefault();
 	}
 
-	
 	handleChange(event){
-		this.setState(
-			{
-				[event.target.name] : event.target.value
-			}
-		)
+		this.setState({[event.target.name] : event.target.value})
 	}
-
 
 	render(){
 		return(
