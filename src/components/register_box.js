@@ -1,5 +1,6 @@
 import React , {Component} from "react";
 import PropTypes from "prop-types";
+import {api} from "../utils/api";
 
 class RegisterBox extends Component {
 	constructor(props){
@@ -16,12 +17,12 @@ class RegisterBox extends Component {
 	handleSubmit(event){
 		event.preventDefault();
 		let register_info = {
-			username :this.state.username,
+			username : this.state.username,
 			password : this.state.password,
 			confirm_password : this.state.confirm_password,
 			email : this.state.email
 		}
-		console.log(register_info);
+		api.getRegistationInfo(register_info);
 	}
 
 	handleChange(event){

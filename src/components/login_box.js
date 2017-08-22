@@ -1,5 +1,6 @@
 import React , {Component} from "react";
 import PropTypes from "prop-types";
+import {api} from '../utils/api';
 
 class LoginBox extends Component {
 	constructor(props){
@@ -18,7 +19,7 @@ class LoginBox extends Component {
 			username: this.state.username,
 			password: this.state.password
 		}
-		console.log(login_info);
+		api.getLoginInfo(login_info);
 	}
 
 	handleChange(event){
