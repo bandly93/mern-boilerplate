@@ -8,7 +8,7 @@ var history = require('connect-history-api-fallback');
 var app = express();
 var router = express.Router();
 var User = require("./models/user");
-var port = process.env.API_PORT || 3000;
+var port = 3000;
 
 //mongodb
 var URI = "mongodb://localhost:27017/testing_db"
@@ -30,11 +30,7 @@ app.use(history());
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/',express.static(__dirname + '/views'));
 
-router.get("/",function(req,res){
-	res.json({message:"Api Initialized"});
-});
-
-router.route("/login")
+app.route("/logins")
 	.get(function(req,res){
 		User.find(function(err,users){
 			if (err)
@@ -43,6 +39,7 @@ router.route("/login")
 		});
 	})
 	.post(function(req,res){
+		console.log('posted')
 		let user = new User();
 		(req.body.username) ? user.username = req.body.username : null;
 		(req.body.password) ? user.password = req.body.password : null;
@@ -54,8 +51,9 @@ router.route("/login")
 		});
 	});
 
+
 app.use('/api',router);
 
 app.listen(port,function(){
-	console.log("api running on port `${port}`");
+	console.log("api running on port 3000");
 });
