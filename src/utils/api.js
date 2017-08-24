@@ -1,7 +1,4 @@
-//var axios = require("axios");
 import axios from "axios";
-//var qs = require("qs");
-import qs from "query-string";
 
 let api = { 
 	getLoginInfo : getLoginInfo,
@@ -14,7 +11,7 @@ function getLoginInfo(info){
 		password : info.password,
 	}
 	return(
-		axios.post('/logins',qs.stringify(info))
+		axios.post('/login',info)
 		.then(function(response){
 			console.log('response received')
 			console.log(response);
@@ -35,7 +32,7 @@ function getRegistrationInfo(info){
 		email : info.email
 	}
 	return(
-		axios.post('/register',qs.stringify(info))
+		axios.post('/login',info)
 			.then(function(response){
 				console.log(response);
 			})
