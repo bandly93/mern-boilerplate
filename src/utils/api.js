@@ -2,7 +2,7 @@ import axios from "axios";
 
 let api = { 
 	getLoginInfo : getLoginInfo,
-	getRegistrationInfo : getRegistrationInfo
+	PostRegistrationInfo : PostRegistrationInfo
 };
 
 function getLoginInfo(info){
@@ -11,9 +11,8 @@ function getLoginInfo(info){
 		password : info.password,
 	}
 	return(
-		axios.post('/login',info)
+		axios.get('/login',info)
 		.then(function(response){
-			console.log('response received')
 			console.log(response);
 		})
 		.catch(function(error){
@@ -24,7 +23,7 @@ function getLoginInfo(info){
 	);
 }
 
-function getRegistrationInfo(info){
+function PostRegistrationInfo(info){
 	var info = {
 		username : info.username,
 		password : info.password,
@@ -38,7 +37,7 @@ function getRegistrationInfo(info){
 			})
 			.catch(function(error){
 				if (error.response) {
-					console.log(error.response);
+				console.log(error.response);
 			}
 		})
 	);

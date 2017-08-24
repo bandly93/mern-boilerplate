@@ -22,7 +22,7 @@ class RegisterBox extends Component {
 			confirm_password : this.state.confirm_password,
 			email : this.state.email
 		}
-		api.getRegistrationInfo(register_info);
+		api.PostRegistrationInfo(register_info);
 	}
 
 	handleChange(event){

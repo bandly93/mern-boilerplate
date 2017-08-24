@@ -28,7 +28,7 @@ infoRouter.post("/",function(req,res){
 			console.log("Error, can't add user to database.");
 		}else {
 			res.json({message:'User successfully added!'});
-			console.log("User successfully added!");
+			console.log("Registration for user successfully added to the database!");
 		}
 	})
 });
